@@ -9,15 +9,13 @@ import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
-const store = createStore(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const store = createStore(reducer)
 
 ReactDOM.render(
-  <Router>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+        <App />
+    </Router>,
+  </Provider>,
   document.getElementById('root')
 );
